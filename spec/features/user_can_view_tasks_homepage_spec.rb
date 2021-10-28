@@ -4,9 +4,9 @@ feature 'User can view public tasks in Homepage' do
   scenario 'Sucessfully' do
     user = create(:user)
     profile = create(:profile, user: user)
-    first_task = create(:task, user: user, share: true)
-    second_task = create(:task, user: user, share: true)
-    third_task = create(:task, user: user, share: true)
+    first_task = create(:task, user: user, share: true, status: 'complete')
+    second_task = create(:task, user: user, share: true, status: 'complete')
+    third_task = create(:task, user: user, share: true, status: 'complete')
     fourth_task = create(:task, user: user, share: false)
     login_as(user)
 

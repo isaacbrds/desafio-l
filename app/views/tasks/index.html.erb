@@ -1,5 +1,5 @@
 <section class="py-3">
-  
+  <h3>Tasks List</h3>
   
   <table class="table">
     <thead>
@@ -30,13 +30,13 @@
         <td> <%= task.status  %></td>
         <td>
             <%= link_to task_path(task), class: "btn btn-primary btn-circle" do %>
-              <i class="fa fa-search"></i>
+              <i class="fa fa-search"></i> Show
             <% end %>
-            <%= link_to edit_task_path(task), class: "btn btn-warning btn-circle" do %>
-              <i class="fa fa-edit"></i>
+            <%= link_to edit_task_path(task), class: "btn btn-warning btn-circle", alt: "Edit" do %>
+              <i class="fa fa-edit"></i> Edit
             <% end %>
-            <%= link_to task_path(task) , class: "btn btn-danger btn-circle", method: :delete, data: {confirm: 'Are you sure?'} do %>
-              <i class="fa fa-minus"></i>
+            <%= link_to task_path(task) , class: "btn btn-danger btn-circle", method: :delete do %>
+              <i class="fa fa-minus"></i> Delete
             <% end %>
         </td>
         

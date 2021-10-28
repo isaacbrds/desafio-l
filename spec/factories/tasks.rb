@@ -6,5 +6,7 @@ FactoryBot.define do
     sequence :description do |n|
       "Description Marota #{n}."
     end
+    
+    share {false}
   end
 end

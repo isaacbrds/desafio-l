@@ -1,0 +1,32 @@
+<div class="row mt-3">
+  <ul class='media-list'>
+    <% @comments.each do |comment| %> 
+    <li class="media">
+      <% if comment.user.profile.avatar.attached? %>
+      <%= image_tag comment.user.profile.avatar, 
+        class: 'float-left img-thumbnail thumbnail img-fluid col-2' %>
+        <% end %>
+        <div class="media-body">
+          <span class="text-muted pull-right">
+            <small class="text-muted">
+              <%= comment.created_at.strftime("Posted on %m/%d/%Y at: %I:%M%p") %>
+            </small>
+          </span>
+          <strong class="text-success"><%= link_to "@#{comment.user.profile.nickname}", profile_path(comment.user.profile)%></strong>
+          <p>
+          <%= comment.body %>
+          </p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <small class='text-muted'> <%= link_to 'Original Task', 
+          task_path(comment.task)%> </small> 
+        </div>
+    </li>
+    <hr>
+    <br>
+    <% end %> 
+  </ul> 
+</div>

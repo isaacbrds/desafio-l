@@ -11,7 +11,8 @@ class TasksController < ApplicationController
   end
 
   def show 
-    
+    @comment = Comment.new
+    @comments = @task.comments.order("created_at DESC")
   end
 
   def new
@@ -48,6 +49,7 @@ class TasksController < ApplicationController
   end
 
   def incomplete
+    @tasks = current_user.tasks.where(status: :incomplete)
   end
 
   private

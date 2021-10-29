@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
-  resources :tasks 
+  resources :tasks do 
+    resources :comments, only: [:create]
+    
+  end
+
+  get "incomplete", to: "tasks#incomplete"
 
   resources :profiles, only: %i[show new create update edit] do
     get 'private_page', on: :member

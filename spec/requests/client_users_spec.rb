@@ -12,10 +12,10 @@ RSpec.describe "/tasks", type: :request do
     describe "GET /tasks" do
         
         let(:url) { "/tasks/"}
-        let!(:tasks) {create_list(:task, 6, user: @current_user, status: 'complete')}
+        let!(:tasks) {create_list(:task, 5, user: @current_user, status: 'complete')}
         it "renders a successful response" do 
             get url
-            expect(response).to be_truthy
+            expect(response).to be_successful
             expect(response.status).to eq(200)
         end
     end 

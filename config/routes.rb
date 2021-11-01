@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     
   end
 
+  get "complete", to: "tasks#complete"
   get "incomplete", to: "tasks#incomplete"
 
   resources :profiles, only: %i[show new create update edit] do

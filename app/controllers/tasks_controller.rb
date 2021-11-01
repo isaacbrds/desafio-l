@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[search]
     
   def index
-    @tasks = current_user.tasks.where(status: :complete)
+    @tasks = current_user.tasks
     
   end
 
@@ -46,6 +46,7 @@ class TasksController < ApplicationController
   end
 
   def complete
+    @tasks = current_user.tasks.where(status: :complete)
   end
 
   def incomplete

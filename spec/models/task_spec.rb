@@ -5,7 +5,7 @@ RSpec.describe Task, type: :model do
     expect(Task.new.share).to eq nil
   end
 
-  it 'Is created with default \'status\' value os 0' do
+  it 'Is created with default \'status\' value of 0' do
     expect(Task.new.status.to_i).to eq 0
   end
 
